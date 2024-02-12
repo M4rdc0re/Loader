@@ -11,14 +11,12 @@ BOOL Init() {
 
 	HMODULE hWininet = GetModuleHandleH(WININETDLL_JOAA);
 
-	// Wininet.dll exported
 	g_Api.pInternetOpenW = (fnInternetOpenW)GetProcAddressH(hWininet, InternetOpenW_JOAA);
 	g_Api.pInternetOpenUrlW = (fnInternetOpenUrlW)GetProcAddressH(hWininet, InternetOpenUrlW_JOAA);
 	g_Api.pInternetReadFile = (fnInternetReadFile)GetProcAddressH(hWininet, InternetReadFile_JOAA);
 	g_Api.pInternetCloseHandle = (fnInternetCloseHandle)GetProcAddressH(hWininet, InternetCloseHandle_JOAA);
 	g_Api.pInternetSetOptionW = (fnInternetSetOptionW)GetProcAddressH(hWininet, InternetSetOptionW_JOAA);
 
-	// Kernel32.dll exported
 	g_Api.pLocalAlloc = (fnLocalAlloc)GetProcAddressH(hKernel32, LocalAlloc_JOAA);
 	g_Api.pLocalReAlloc = (fnLocalReAlloc)GetProcAddressH(hKernel32, LocalReAlloc_JOAA);
 	g_Api.pLocalFree = (fnLocalFree)GetProcAddressH(hKernel32, LocalFree_JOAA);

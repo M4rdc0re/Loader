@@ -51,7 +51,7 @@ BOOL ReadPayloadFile(const char* FileInput, PDWORD sPayloadSize, unsigned char**
 }
 
 
-VOID GenerateBytes(unsigned char* pBuff, DWORD dwBuffSize) {
+void GenerateBytes(unsigned char* pBuff, DWORD dwBuffSize) {
 
 	for (size_t i = 0; i < dwBuffSize; i++)
 		pBuff[i] = rand() % 256;
@@ -81,7 +81,7 @@ BOOL WritePayloadFile(const char* FileInput, DWORD sPayloadSize, unsigned char* 
 
 
 
-VOID HideAesKeyByIv(PBYTE ptAesKey, PBYTE ptAesIv) {
+void HideAesKeyByIv(PBYTE ptAesKey, PBYTE ptAesIv) {
 
 	for (int i = 1; i < KEY_SIZE; i++) {
 		for (int j = 0; j < IV_SIZE; j++) {

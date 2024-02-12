@@ -23,7 +23,7 @@ PVOID Helper(PVOID* ppAddress) {
 	return pAddress;
 }
 
-VOID IatCamouflage() {
+void IatCamouflage() {
 
 	PVOID		pAddress = NULL;
 	int* A = (int*)Helper(&pAddress);

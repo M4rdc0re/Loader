@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <wchar.h>
 
-VOID XorByInputKey(LPWSTR szString, SIZE_T sStringSize, PBYTE bKey, SIZE_T sKeySize) {
+void XorByInputKey(LPWSTR szString, SIZE_T sStringSize, PBYTE bKey, SIZE_T sKeySize) {
     size_t wStringSize = sStringSize / sizeof(wchar_t);
 
     for (size_t i = 0, j = 0; i < wStringSize; i++, j++) {

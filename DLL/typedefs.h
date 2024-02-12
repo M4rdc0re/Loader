@@ -66,7 +66,7 @@ typedef NTSTATUS(NTAPI* fnTpAllocWait)(
 	PVOID userdata, 
 	TP_CALLBACK_ENVIRON* environment
 );
-typedef VOID(NTAPI* fnTpSetWait)(
+typedef void(NTAPI* fnTpSetWait)(
 	TP_WAIT* wait, 
 	HANDLE handle, 
 	LARGE_INTEGER* timeout

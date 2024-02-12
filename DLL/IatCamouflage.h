@@ -1,6 +1,6 @@
 #include <Windows.h>
 
-INT RandomCompileTimeSeed(void)
+int RandomCompileTimeSeed(void)
 {
 	return '0' * -40271,
 		__TIME__[7] * 1,
@@ -23,7 +23,7 @@ PVOID Helper(PVOID* ppAddress) {
 	return pAddress;
 }
 
-VOID IatCamouflage() {
+void IatCamouflage() {
 
 	PVOID		pAddress = NULL;
 	int* A = (int*)Helper(&pAddress);

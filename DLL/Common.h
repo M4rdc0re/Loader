@@ -34,7 +34,7 @@ UINT32 HashStringJenkinsOneAtATime32BitA(PCHAR String);
 #define HASHA(API) (HashStringJenkinsOneAtATime32BitA((PCHAR) API))
 
 BOOL GetSyscallId(PVOID pModuleBase, DWORD* SyscallId, PCHAR fnctolookfor);
-extern VOID setup(DWORD id, LPVOID jmptofake);
+extern void setup(DWORD id, LPVOID jmptofake);
 extern NTSTATUS executioner();
 CHAR _toUpper(CHAR C);
 PVOID _memcpy(PVOID Destination, PVOID Source, SIZE_T Size);
@@ -63,5 +63,5 @@ FARPROC GetProcAddressH(HMODULE hModule, DWORD dwApiNameHash);
 HMODULE GetModuleHandleH(PCHAR dwModuleNameHash);
 HMODULE LoadLibraryH(LPSTR DllName);
 
-VOID FetchAesKeyAndIv(PBYTE ctAesKey, PBYTE ctAesIv);
-VOID XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, const SIZE_T sKeySize);
+void FetchAesKeyAndIv(PBYTE ctAesKey, PBYTE ctAesIv);
+void XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, const SIZE_T sKeySize);

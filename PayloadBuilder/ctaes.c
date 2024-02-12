@@ -36,7 +36,7 @@ static void SaveBytes(unsigned char* data16, const AES_state* s) {
 }
 
 static void SubBytes(AES_state* s, int inv) {
-    /* Load the bit slices */
+
     uint16_t U0 = s->slice[7], U1 = s->slice[6], U2 = s->slice[5], U3 = s->slice[4];
     uint16_t U4 = s->slice[3], U5 = s->slice[2], U6 = s->slice[1], U7 = s->slice[0];
 

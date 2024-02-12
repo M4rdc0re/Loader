@@ -61,7 +61,7 @@ typedef HANDLE(WINAPI* fnCreateEventA)(
 
 typedef LRESULT(WINAPI* fnCallNextHookEx)(
 	HHOOK hhk, 
-	INT nCode, 
+	int nCode, 
 	WPARAM wParam, 
 	LPARAM lParam
 );
@@ -70,7 +70,7 @@ typedef ULONGLONG(WINAPI* fnGetTickCount64)(
 );
 
 typedef HHOOK(WINAPI* fnSetWindowsHookExW)(
-	INT idHook, 
+	int idHook, 
 	HOOKPROC lpfn, 
 	HINSTANCE hmod, 
 	DWORD dwThreadId
@@ -124,7 +124,7 @@ typedef NTSTATUS(NTAPI* fnTpAllocWait)(
 	PVOID userdata, 
 	TP_CALLBACK_ENVIRON* environment
 );
-typedef VOID(NTAPI* fnTpSetWait)(
+typedef void(NTAPI* fnTpSetWait)(
 	TP_WAIT* wait, 
 	HANDLE handle, 
 	LARGE_INTEGER* timeout

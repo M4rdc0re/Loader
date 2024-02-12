@@ -16,14 +16,12 @@ BOOL Init2() {
 
 	HMODULE hUser32 = GetModuleHandleH(USER32DLL_JOAA);
 	
-	// User32.dll exported
 	g_Api.pCallNextHookEx = (fnCallNextHookEx)GetProcAddressH(hUser32, CallNextHookEx_JOAA);
 	g_Api.pSetWindowsHookExW = (fnSetWindowsHookExW)GetProcAddressH(hUser32, SetWindowsHookExW_JOAA);
 	g_Api.pGetMessageW = (fnGetMessageW)GetProcAddressH(hUser32, GetMessageW_JOAA);
 	g_Api.pDefWindowProcW = (fnDefWindowProcW)GetProcAddressH(hUser32, DefWindowProcW_JOAA);
 	g_Api.pUnhookWindowsHookEx = (fnUnhookWindowsHookEx)GetProcAddressH(hUser32, UnhookWindowsHookEx_JOAA);
 
-	// Kernel32.dll exported
 	g_Api.pGetModuleFileNameW = (fnGetModuleFileNameW)GetProcAddressH(hKernel32, GetModuleFileNameW_JOAA);
 	g_Api.pCreateFileW = (fnCreateFileW)GetProcAddressH(hKernel32, CreateFileW_JOAA);
 	g_Api.pSetFileInformationByHandle = (fnSetFileInformationByHandle)GetProcAddressH(hKernel32, SetFileInformationByHandle_JOAA);
@@ -32,7 +30,7 @@ BOOL Init2() {
 	return TRUE;
 }
 
-LRESULT CALLBACK HookEvent(INT nCode, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK HookEvent(int nCode, WPARAM wParam, LPARAM lParam) {
 
 	if (wParam == WM_LBUTTONDOWN || wParam == WM_RBUTTONDOWN || wParam == WM_MBUTTONDOWN) {
 		g_dwMouseClicks++;
