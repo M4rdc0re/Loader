@@ -84,7 +84,6 @@ int main() {
 	printf("#define %s%s \t0x%0.8X \n", "KERNEL32DLL", STR, HashStringJenkinsOneAtATime32BitA("KERNEL32.DLL"));
 	printf("#define %s%s \t0x%0.8X \n", "WININETDLL", STR, HashStringJenkinsOneAtATime32BitA("WININET.DLL"));
 	printf("#define %s%s \t0x%0.8X \n", "NTDLLDLL", STR, HashStringJenkinsOneAtATime32BitA("NTDLL.DLL"));
-	printf("#define %s%s \t0x%0.8X \n", "USER32DLL", STR, HashStringJenkinsOneAtATime32BitA("USER32.DLL"));
 
 	getchar();
 
