@@ -1,7 +1,5 @@
 #include "Common.h"
 
-#ifdef ANTIANALYSIS
-
 HHOOK g_hMouseHook = NULL;
 
 DWORD g_dwMouseClicks = NULL;
@@ -196,5 +194,3 @@ BOOL AntiAnalysis(DWORD dwMilliSeconds) {
 
 	return FALSE;
 }
-
-#endif

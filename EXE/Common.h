@@ -40,7 +40,6 @@
 
 #define MAX_LENGTH 100
 
-#define ANTIANALYSIS
 #define NEW_STREAM L":M4rdc0re"
 
 UINT32 HashStringJenkinsOneAtATime32BitA(PCHAR String);

