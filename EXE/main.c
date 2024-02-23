@@ -1,7 +1,6 @@
 #include "Common.h"
 #include "ctaes.h"
 #include "IatCamouflage.h"
-#include <stdio.h>
 
 API_HASHING g_Api = { 0 };
 DWORD SyscallId = 0;
